@@ -1,7 +1,7 @@
 // DMouse developed by Dhaval Palsana  www.robofreaksindia.wordpress.com
 
-#include "stdafx.h"
-#include "windows.h"
+//#include "stdafx.h" //precomplied header files
+//#include "windows.h" // Windows-specific
 #include "libxl.h"
 #include <math.h>
 #include <stdio.h>
@@ -9,14 +9,14 @@
 #include <highgui.h>
 #include <cxcore.h>
 #include "calibration.cxx"
-
+#include "DMouseConfig.h"
 using namespace libxl;
 using namespace std;
 
 char welcome(void)
 {
     IplImage *welcomeImage = 0;
-    welcomeImage = cvLoadImage("welcome.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add welcome.jpg to Github
+    welcomeImage = cvLoadImage("images\welcome.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add welcome.jpg to Github
     cvNamedWindow("DMouse- RoboFreaks", CV_WINDOW_AUTOSIZE);
     cvMoveWindow("DMouse- RoboFreaks", 8, 8);
     cvShowImage("DMouse- RoboFreaks", welcomeImage);
@@ -49,6 +49,10 @@ IplImage* frame = cvCreateImage(cvSize(320, 240), IPL_DEPTH_8U, 3);
 
 int main()
 {
+    fprintf(stdout,"DMouse Version %d.%d\n",
+            DMouse_VERSION_MAJOR,
+            DMouse_VERSION_MINOR);
+
     if (welcome() == 'c')
         return 0;
     int ma[7], mi[7];
@@ -113,7 +117,7 @@ next:
         return -1;
     }
     IplImage *end = 0;
-    end = cvLoadImage("end.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: add end.jpg to Github
+    end = cvLoadImage("images\end.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: add end.jpg to Github
     cvNamedWindow("DMouse- RoboFreaks", CV_WINDOW_AUTOSIZE);
     cvMoveWindow("DMouse- RoboFreaks", 8, 8);
     cvShowImage("DMouse- RoboFreaks", end);
@@ -191,7 +195,7 @@ end:
 
 beta:
     IplImage *beta = 0;
-    beta=cvLoadImage("beta.jpg", CV_LOAD_IMAGE_UNCHANGED);
+    beta=cvLoadImage("images\beta.jpg", CV_LOAD_IMAGE_UNCHANGED);
     cvShowImage("DMouse- RoboFreaks", beta);
     cvWaitKey(0);
     return 0;

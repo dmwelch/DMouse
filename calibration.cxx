@@ -4,12 +4,12 @@ void calibration(void)
     printf("\n\nCalibration Started...");
     IplImage *img = 0;
     IplImage *image = 0;
-    image = cvLoadImage("start.jpg", CV_LOAD_IMAGE_UNCHANGED);
+    image = cvLoadImage("images\start.jpg", CV_LOAD_IMAGE_UNCHANGED);
     cvNamedWindow("Calibrating DMouse- RoboFreaks", CV_WINDOW_AUTOSIZE);
     cvMoveWindow("Calibrating DMouse- RoboFreaks", 400, 80);
     cvShowImage("Calibrating DMouse- RoboFreaks", image);
     cvWaitKey(0);
-    image = cvLoadImage("1.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add 1.jpg to Github
+    image = cvLoadImage("images\1.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add 1.jpg to Github
     int count = 1;
     cvShowImage("Calibrating DMouse- RoboFreaks", image);
     CvCapture* capture = cvCaptureFromCAM(CV_CAP_ANY);
@@ -56,7 +56,7 @@ void calibration(void)
             {
                 ok = 0;
                 count = 2;
-                image = cvLoadImage("2.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add 2.jpg to Github
+                image = cvLoadImage("images\2.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add 2.jpg to Github
                 cvShowImage("Calibrating DMouse- RoboFreaks", image);
             }
         }
@@ -70,7 +70,7 @@ void calibration(void)
             {
                 ok = 0;
                 count = 3;
-                image = cvLoadImage("3.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add 3.jpg to Github
+                image = cvLoadImage("images\3.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add 3.jpg to Github
                 cvShowImage("Calibrating DMouse- RoboFreaks", image);
             }
         }
@@ -84,7 +84,7 @@ void calibration(void)
             {
                 ok = 0;
                 count = 4;
-                image = cvLoadImage("4.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add 4.jpg to Github
+                image = cvLoadImage("images\4.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add 4.jpg to Github
                 cvShowImage("Calibrating DMouse- RoboFreaks", image);
             }
         }
@@ -98,7 +98,7 @@ void calibration(void)
             {
                 ok = 0;
                 count = 5;
-                image = cvLoadImage("5.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add 5.jpg to Github
+                image = cvLoadImage("images\5.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add 5.jpg to Github
                 cvShowImage("Calibrating DMouse- RoboFreaks", image);
             }
         }
@@ -112,7 +112,7 @@ void calibration(void)
             {
                 ok = 0;
                 count = 6;
-                image = cvLoadImage("done.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add done.jpg to Github
+                image = cvLoadImage("images\done.jpg", CV_LOAD_IMAGE_UNCHANGED); // TODO: Add done.jpg to Github
                 cvShowImage("Calibrating DMouse- RoboFreaks", image);
             }
         }

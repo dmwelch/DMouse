@@ -1,0 +1,21 @@
+cmake_minimum_required ( VERSION 2.8.9 )
+project ( DMouse )
+
+# The version number.
+set ( DMouse_VERSION_MAJOR 1 )
+set ( DMouse_VERSION_MINOR 4 )
+
+set(EXTERNAL_PROJECT_BUILD_TYPE "Release" CACHE STRING "Default build type for support libraries")
+option(USE_SYSTEM_OpenCV "Build using an externally defined version of OpenCV" OFF)
+
+
+# build a CPack driven installer package
+include ( InstallRequiredSystemLibraries )
+set ( CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/license.txt" )
+set ( CPACK_PACKAGE_VERSION_MAJOR "${DMouse_VERSION_MAJOR}" )
+set ( CPACK_PACKAGE_VERSION_MINOR "${DMouse_VERSION_MINOR}" )
+
+include ( CPack )
+
+# Use FindOpenCV file
+set ( CMAKE_MODULE_PATH "${CMAKE_CURENT_SOURCE_DIR}/Modules" )

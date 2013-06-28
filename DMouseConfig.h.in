@@ -1,0 +1,3 @@
+// the configured options and settings for DMouse
+#define DMouse_VERSION_MAJOR @DMouse_VERSION_MAJOR@
+#define DMouse_VERSION_MINOR @DMouse_VERSION_MINOR@
